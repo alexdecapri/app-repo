@@ -4,14 +4,19 @@ app.config(function ($stateProvider, $urlRouterProvider) {
 
   $stateProvider
     .state("home", {
-      url: "/home",
+      url: "/",
       templateUrl: "components/home/homeView.html",
-      controller: "homeCtrl"
+      controller: "homeCtrl",
+      resolve: {
+        quizList: function(quizService) {
+          return quizService.getQuizNames();
+        }
+      }
     })
     .state("quiz", {
       url: "/quiz",
       templateUrl: "components/quiz/views/quizContainerView.html",
-      controller: "quizCtrl.js"
+      controller: "quizCtrl"
     })
     // .state("quiz.view", {
     //   url:
@@ -25,6 +30,6 @@ app.config(function ($stateProvider, $urlRouterProvider) {
     })
 
   $urlRouterProvider
-    .otherwise("/home")
+    .otherwise("/")
 
 })
