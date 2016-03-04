@@ -14,9 +14,15 @@ app.config(function ($stateProvider, $urlRouterProvider) {
       }
     })
     .state("quiz", {
-      url: "/quiz",
+      url: "/quiz/:quizName",
       templateUrl: "components/quiz/views/quizContainerView.html",
-      controller: "quizCtrl"
+      controller: "quizCtrl",
+      resolve: {
+        questions: function (quizService, $stateParams) {
+          var name = $stateParams.quizName;
+          return quizService.getQuestions(name);
+        }
+      }
     })
     // .state("quiz.view", {
     //   url:
