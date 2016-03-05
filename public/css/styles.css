@@ -24,12 +24,18 @@ p {
   color: #009ACB;
 }
 
+
+
 .top {
   height: 400px;
   width: 850px;
   background-color: black;
   border: 2px solid #FBD25C;
   margin: 0 auto;
+}
+
+.top a:hover {
+  color: #009acb;
 }
 
 .top h1 {
@@ -46,7 +52,7 @@ p {
   margin-top: 60px;
 }
 #html-1 {
-  color: #009acb;
+  color: #FBD25C;
   font-size: 20px;
   text-align: center;
   margin-top: 20px;
@@ -68,4 +74,13 @@ p {
 
 .bottom h1 {
   margin-top: 80px;
+}
+
+@media (max-width: 850px) {
+  .top {
+    width: 100%;
+  }
+  .bottom {
+    width: 100%;
+  }
 }
