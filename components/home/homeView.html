@@ -7,12 +7,12 @@
   <body ng-controller="homeCtrl">
     <div class="top">
       <h1>Choose a quiz!</h1>
-      <div id="angular-1">
-        ANGULAR
+      <div id="angular-1" ng-repeat="item in quizzes">
+        <a ui-sref="quiz.view({quizName: item.name})">{{ item.name }}</a> <!--Look at app.js line 17 :quizName-->
       </div>
-      <div id="html-1">
+      <!-- <div id="html-1">
         HTML
-      </div>
+      </div> -->
     </div>
     <div class="bottom">
       <h1>View Past Quizzes</h1>

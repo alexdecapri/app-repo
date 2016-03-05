@@ -68,7 +68,8 @@ app.service("quizService", function($q) {
       name: "Angular",
     }, {
       name: "HTML"
-    }])
+    }]);
+
 
     return defer.promise;
 

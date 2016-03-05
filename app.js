@@ -8,7 +8,7 @@ app.config(function ($stateProvider, $urlRouterProvider) {
       templateUrl: "components/home/homeView.html",
       controller: "homeCtrl",
       resolve: {
-        quizList: function(quizService) {
+        quizList: function(quizService) { //maybe not right name
           return quizService.getQuizNames();
         }
       }
@@ -24,11 +24,17 @@ app.config(function ($stateProvider, $urlRouterProvider) {
         }
       }
     })
-    // .state("quiz.view", {
-    //   url:
-    //   templateUrl:
-    //   controller:
-    // })
+    .state("quiz.view", {
+      parent: 'quiz',
+      views: {
+        'list': {
+          templateUrl: 'components/quiz/views/questionListWrapperView.html'
+        },
+        'detail': {
+          templateUrl: 'components/quiz/views/questionDetailView.html'
+        }
+      }
+    })
     .state("results", {
       url: "/results",
       templateUrl: "components/results/resultsView.html",
