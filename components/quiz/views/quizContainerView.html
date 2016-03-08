@@ -1,13 +1,8 @@
-<!DOCTYPE html>
-<html ng-app="quizApp">
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-  </head>
-  <body ng-controller="quizCtrl">
-    <div>
-      {{test}}
-      {{quizName}}
+<div class="quizContainer">
+  <div class="list" ui-view="list"></div>
+  <div class="detailWrapper">
+    <div class="detailContainer">
+      <div class="detail" ui-view="detail"></div>
     </div>
-  </body>
-</html>
+  </div>
+</div>

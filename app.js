@@ -1,5 +1,14 @@
 var app = angular.module("quizApp", ["ui.router"]);
 
+app.run(function ($rootScope, $state) {
+  $rootScope.$on("$stateChangeStart", function(event, toState, toParams, fromState, fromParams) {
+    if(toState.name === "quiz") {
+      event.preventDefault();
+      $state.go("quiz.view", toParams)
+    }
+  })
+});
+
 app.config(function ($stateProvider, $urlRouterProvider) {
 
   $stateProvider

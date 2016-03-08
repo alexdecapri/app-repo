@@ -2,7 +2,7 @@ var app = angular.module("quizApp");
 
 app.controller("quizCtrl", function($scope, $stateParams, questions, quizService) { //refers to line 22 app.js resolve questions
   // console.log($stateParams);
-  // $scope.quizName = $stateParams.quizName; to show us that it was there, deleted on 3/3 of Day 1
+  // $scope.quizName = $stateParams.quizName; //to show us that it was there, deleted on 3/3 of Day 1
   $scope.questions = questions;
   $scope.answers = {};
   $scope.currentQuestion = $scope.questions[0];

@@ -1,5 +1,5 @@
-var app = angular.module("quizApp");
-
-app.controller("resultsCtrl", function($scope) {
-
-});
+// var app = angular.module("quizApp");
+//
+// app.controller("resultsCtrl", function($scope) {
+//
+// });
