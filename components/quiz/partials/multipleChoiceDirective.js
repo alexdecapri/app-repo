@@ -10,5 +10,20 @@ app.directive("multipleChoice", function() {
     },
     restrict: "AE",
     replace: true,
+    controller: function($scope) {
+      $scope.$watch("question", function() {
+        $scope.selected = "";
+      })
+      $scope.update = function(choice) {
+          $scope.selected = choice;
+      }
+      $scope.saveAnswer = function(selected) {
+        debugger;
+        $scope.save({
+          id: $scope.question.id,
+          answer: selected
+        })
+      }
+    }
   }
-})
+});

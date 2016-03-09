@@ -16,6 +16,9 @@ app.controller("quizCtrl", function($scope, $stateParams, questions, quizService
       $scope.checkMyAnswers();
     }
   };
+  // $scope.saveAnswer = function(id, answer) {
+  //   $scope.answers[id] = answer;
+  // }; //not working now...
 
   $scope.setCurrentQuestion = function(question) {
     $scope.currentQuestion = question;

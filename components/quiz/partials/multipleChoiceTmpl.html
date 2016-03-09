@@ -1,8 +1,8 @@
 <div>
-  <h2> {{currentQuestion.title}} </h2>
+  <h2> {{question.title}} </h2>
   <div>
-    <div ng-repeat="choice in currentQuestion.choices">
-      <input ng-checked="answers[currentQuestion.id] === choice" ng-click="update(choice)" name="answer" type="radio"> {{ choice }}
+    <div ng-repeat="choice in question.choices">
+      <input ng-checked="answers[question.id] === choice" ng-click="update(choice)" name="answer" type="radio"> {{ choice }}
       <br>
     </div>
   </div>
